@@ -13,7 +13,8 @@ public class browserFactory {
         WebDriver webDriver;
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().clearDriverCache().setup();
+            WebDriverManager.chromedriver().clearResolutionCache().setup();
             webDriver = new ChromeDriver();
         } else if (browserName.equalsIgnoreCase("headless chrome")) {
             WebDriverManager.chromedriver().setup();

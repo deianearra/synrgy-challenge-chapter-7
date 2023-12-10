@@ -1,10 +1,11 @@
-@sorting
+@checkout
 Feature: Checkout
 
-  @sorting
+  @checkout
   Scenario: As a user, I should be able to log in using correct registered data
     Given user navigate to url "https://www.saucedemo.com/"
     When user login using "standard user"
-    * user select filter price high to low
-    Then compare first product price with second product price
-    * user take screenshot "user-sorting-high-to-low-successfully"
+    * user click Add To Cart button on product
+    * user do checkout
+    Then verify checkout successfully
+    * user take screenshot "user-checkout-successfully"
